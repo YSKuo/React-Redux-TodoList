@@ -4,7 +4,6 @@ import { deleteTodo, clickCheckbox, editTodo } from '../redux/actions';
 import classNames from 'classnames';
 
 const Todo = ({ todo }) => {
-  // const todos = useSelector(selectTodos);
   const { id, content, isCompleted } = todo;
   const inputIsCompleted = classNames('todo__input form-control', {'todo__input-completed': isCompleted});
   const dispatch = useDispatch();
@@ -24,8 +23,7 @@ const Todo = ({ todo }) => {
         type="text" 
         className={inputIsCompleted} 
         value={content}
-        // id={id}
-        // onChange={() => editTodo(id, content)}
+        onChange={(e) => dispatch(editTodo(id, e.target.value))}
       />
 
       <button 

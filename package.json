@@ -27,6 +27,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
+  "homepage": "https://YSKuo.github.io/React-Redux-TodoList",
   "husky": {
     "hooks": {
       "pre-commit": "lint-staged"

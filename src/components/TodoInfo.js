@@ -1,14 +1,16 @@
-import React from 'react';
+import React, { memo } from 'react';
 import Progress from './Progress';
 import TodosControls from './TodosControls';
 import Todos from './Todos';
 
-const TodosInfo = () => (
-  <div className="container">
-    <Progress />
-    <TodosControls />
-    <Todos />
-  </div>
-)
+const MemoTodosInfo = memo(() => {
+  return (
+    <div className="container">
+      <Progress />
+      <TodosControls />
+      <Todos />
+    </div>
+  );
+});
 
-export default TodosInfo;
+export default MemoTodosInfo;

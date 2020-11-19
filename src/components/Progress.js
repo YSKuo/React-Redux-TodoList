@@ -1,9 +1,8 @@
-import React, { memo } from 'react';
+import React, { memo, useMemo } from 'react';
 import { useSelector } from 'react-redux';
 import { selectTodos } from '../redux/selectors';
 
 const MemoProgressBar = memo(({ percent }) => {
-  // console.log('progress bar render');
   return (
     <div
       className="progress-bar"
@@ -17,7 +16,6 @@ const MemoProgressBar = memo(({ percent }) => {
 });
 
 const MemoUncompletedNumber = memo(({ numUncomplete }) => {
-  // console.log('UncompletedNumber render');
   return (
     <p>
       <span>
@@ -28,9 +26,9 @@ const MemoUncompletedNumber = memo(({ numUncomplete }) => {
 });
 
 const Progress = () => {
-  // console.log('progress')
   const todos = useSelector(selectTodos);
 
+  // 進度顯示項目的計算
   const numTodos = todos.length;
   const numCompleted = todos.filter(todo => todo.isCompleted).length;
   const numUncomplete = todos.filter(todo => !todo.isCompleted).length;
@@ -50,6 +48,6 @@ const Progress = () => {
       <MemoUncompletedNumber numUncomplete={numUncomplete} />
     </div>
   );
-}
+};
 
 export default Progress;

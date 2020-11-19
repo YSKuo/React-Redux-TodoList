@@ -2,8 +2,7 @@ import React, { useState, memo } from 'react';
 import { useDispatch } from 'react-redux';
 import { addTodo } from '../redux/actions';
 
-const MemoButton = memo(({className, children}) =>{
-  console.log('MemoButton render')
+const MemoButton = memo(({ className, children }) =>{
   return (
     <button className={className}>{children}</button>
   )

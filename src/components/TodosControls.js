@@ -1,43 +1,39 @@
-import React from 'react';
+import React, { memo } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { selectTodos, selectFilter } from '../redux/selectors';
 import { deleteCompletedTodos, changeAllTodosStatus, pickFilter } from '../redux/actions';
 import { DropdownButton, Dropdown } from 'react-bootstrap';
 import classNames from 'classnames';
 
+const MemoFilterRadio = memo(({ filter }) => {
+  const dispatch = useDispatch();
+  const filterState = useSelector(selectFilter);
+
+  return (
+    <label className={classNames('btn btn-secondary', {active: filterState === filter})}>
+      <input type="radio" name="filter" value={filter} 
+        checked={filterState === filter}
+        onChange={(e) => dispatch(pickFilter(e.target.value))} 
+      />
+      {filter.toUpperCase()}
+    </label>
+  );
+});
+
 const TodosControls = () => {
   const todos = useSelector(selectTodos);
-  const filter = useSelector(selectFilter);
   const dispatch = useDispatch();
   const completeAllToggleText = todos.every((todo) => todo.isCompleted) ? 'Uncomplete all' : 'Complete all';
 
   return (
     <div className="row todos__controls justify-content-between">
       <div className="btn-group btn-group-toggle mt-2" >
-        <label className={classNames('btn btn-secondary', {active: filter === 'all'})}>
-          <input type="radio" name="filter" value="all" 
-            checked={filter === 'all'} 
-            onChange={(e) => dispatch(pickFilter(e.target.value))} 
-          />
-          All
-        </label>
-        <label className={classNames('btn btn-secondary', {active: filter === 'active'})}>
-          <input type="radio" name="filter" value="active" 
-            checked={filter === 'active'} 
-            onChange={(e) => dispatch(pickFilter(e.target.value))} 
-          />
-          Active
-        </label>
-        <label className={classNames('btn btn-secondary', {active: filter === 'completed'})}>
-          <input type="radio" name="filter" value="completed" 
-            checked={filter === 'completed'} 
-            onChange={(e) => dispatch(pickFilter(e.target.value))}
-          />
-          Completed
-        </label>
+        <MemoFilterRadio filter='all' />
+        <MemoFilterRadio filter='active' />
+        <MemoFilterRadio filter='completed' />
       </div>
 
-      <DropdownButton className="dropdown mt-2" id="dropdown-basic-button" title="Actions">
+      <DropdownButton className="dropdown mt-2" id="dropdown-basic-button" title="ACTIONS">
         <Dropdown.Item onClick={(e) => dispatch(changeAllTodosStatus())}>
           {completeAllToggleText}
         </Dropdown.Item>
@@ -47,6 +43,6 @@ const TodosControls = () => {
       </DropdownButton>
     </div>
   );
-}
+};
 
 export default TodosControls;

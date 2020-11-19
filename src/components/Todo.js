@@ -7,7 +7,6 @@ const MemoTodo = memo(({ todo }) => {
   const { id, content, isCompleted } = todo;
   const inputIsCompleted = classNames('todo__input form-control', {'todo__input-completed': isCompleted});
   const dispatch = useDispatch();
-  // console.log(id, 'todo render')
 
   return (
     <div className="todo input-group mb-1">

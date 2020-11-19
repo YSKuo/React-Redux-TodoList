@@ -18,6 +18,7 @@ export default function todosReducer(state = initialState, action) {
           }]
         }
       }
+      return state;
     }
     case DELETE_TODO: {
       return {

@@ -40,7 +40,6 @@ export default function todosReducer(state = initialState, action) {
       }
     }
     case EDIT_TODO: {
-      console.log('edit!')
       return {
         ...state,
         todos: state.todos.map(todo => {

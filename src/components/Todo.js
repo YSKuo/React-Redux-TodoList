@@ -1,12 +1,13 @@
-import React from 'react';
+import React, { memo } from 'react';
 import { useDispatch } from 'react-redux';
 import { deleteTodo, clickCheckbox, editTodo } from '../redux/actions';
 import classNames from 'classnames';
 
-const Todo = ({ todo }) => {
+const MemoTodo = memo(({ todo }) => {
   const { id, content, isCompleted } = todo;
   const inputIsCompleted = classNames('todo__input form-control', {'todo__input-completed': isCompleted});
   const dispatch = useDispatch();
+  // console.log(id, 'todo render')
 
   return (
     <div className="todo input-group mb-1">
@@ -34,6 +35,6 @@ const Todo = ({ todo }) => {
       </button>
     </div>
   );
-}
+});
 
-export default Todo;
+export default MemoTodo;

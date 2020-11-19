@@ -25,8 +25,7 @@ const Todo = ({ todo }) => {
         value={content}
         onChange={(e) => dispatch(editTodo(id, e.target.value))}
       />
-
-      <button 
+      <button
         type="button" 
         className="clear-btn btn btn-outline-danger" 
         onClick={() => dispatch(deleteTodo(id))}

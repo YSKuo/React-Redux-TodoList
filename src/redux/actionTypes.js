@@ -1,3 +1,5 @@
+export const GET_TODOS_FROM_LOCALSTORAGE = 'get_todos_from_localStorage';
+
 export const ADD_TODO = 'add_todo';
 export const DELETE_TODO = 'delete_todo';
 export const EDIT_TODO = 'edit_todo';

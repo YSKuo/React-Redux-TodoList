@@ -1,10 +1,21 @@
-import { ADD_TODO, 
+import { 
+  GET_TODOS_FROM_LOCALSTORAGE,
+  ADD_TODO, 
   DELETE_TODO, 
   EDIT_TODO, 
   DELETE_COMPLETED_TODOS, 
   CLICK_CHECKBOX, 
   CHANGE_ALL_TODOS_STATUS, 
   PICK_FILTER } from './actionTypes';
+
+export function getTodosFromLocalStorage(todos) {
+  return {
+    type: GET_TODOS_FROM_LOCALSTORAGE,
+    payload: {
+      todos
+    }
+  }
+};
 
 export function addTodo(content) {
   return {

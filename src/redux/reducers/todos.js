@@ -1,4 +1,11 @@
-import { ADD_TODO, DELETE_TODO, EDIT_TODO, DELETE_COMPLETED_TODOS, CLICK_CHECKBOX, CHANGE_ALL_TODOS_STATUS } from '../actionTypes';
+import {
+  GET_TODOS_FROM_LOCALSTORAGE, 
+  ADD_TODO, 
+  DELETE_TODO, 
+  EDIT_TODO, 
+  DELETE_COMPLETED_TODOS, 
+  CLICK_CHECKBOX, 
+  CHANGE_ALL_TODOS_STATUS } from '../actionTypes';
 
 const initialState = {
   todos: []
@@ -6,6 +13,11 @@ const initialState = {
 
 export default function todosReducer(state = initialState, action) {
   switch(action.type) {
+    case GET_TODOS_FROM_LOCALSTORAGE: {
+      return {
+        todos: action.payload.todos
+      }
+    }
     case ADD_TODO: {
       const content = action.payload.content.trim();
       if (content) {

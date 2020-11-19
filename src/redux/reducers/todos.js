@@ -64,7 +64,7 @@ export default function todosReducer(state = initialState, action) {
         .every(todo => todo.isCompleted);
       return {
         ...state,
-        todos: state.todo.map(todo => ({
+        todos: state.todos.map(todo => ({
           ...todo,
           isCompleted: !allCompleted
         }))

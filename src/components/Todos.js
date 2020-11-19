@@ -7,7 +7,7 @@ import Todo from './Todo';
 const Todos = () => {
   const todos = useSelector(selectTodos);
   const filter = useSelector(selectFilter);
-
+  
   return (
     <section className="todos mt-4">
     {

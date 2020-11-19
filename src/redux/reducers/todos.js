@@ -42,7 +42,7 @@ export default function todosReducer(state = initialState, action) {
     case DELETE_COMPLETED_TODOS: {
       return {
         ...state,
-        todos: state.todos.filtet(todo => !todo.isCompleted)
+        todos: state.todos.filter(todo => !todo.isCompleted)
       }
     }
     case CLICK_CHECKBOX: {

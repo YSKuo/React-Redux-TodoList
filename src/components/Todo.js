@@ -25,7 +25,7 @@ const Todo = ({ todo }) => {
         className={inputIsCompleted} 
         value={content}
         // id={id}
-        // onChange={editTodo(id, content)}
+        // onChange={() => editTodo(id, content)}
       />
 
       <button 

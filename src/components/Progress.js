@@ -1,4 +1,4 @@
-import React, { memo, useMemo } from 'react';
+import React, { memo } from 'react';
 import { useSelector } from 'react-redux';
 import { selectTodos } from '../redux/selectors';
 
@@ -31,7 +31,7 @@ const Progress = () => {
   // 進度顯示項目的計算
   const numTodos = todos.length;
   const numCompleted = todos.filter(todo => todo.isCompleted).length;
-  const numUncomplete = todos.filter(todo => !todo.isCompleted).length;
+  const numUncomplete = numTodos - numCompleted;
   let percent;
   if (numTodos === 0) {
     percent = 0;

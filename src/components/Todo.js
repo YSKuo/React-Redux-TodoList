@@ -5,7 +5,6 @@ import classNames from 'classnames';
 
 const MemoTodo = memo(({ todo }) => {
   const { id, content, isCompleted } = todo;
-  const inputIsCompleted = classNames('todo__input form-control', {'todo__input-completed': isCompleted});
   const dispatch = useDispatch();
 
   return (
@@ -21,7 +20,7 @@ const MemoTodo = memo(({ todo }) => {
       </div>
       <input 
         type="text" 
-        className={inputIsCompleted} 
+        className={classNames('todo__input form-control', {'todo__input-completed': isCompleted})} 
         value={content}
         onChange={(e) => dispatch(editTodo(id, e.target.value))}
       />

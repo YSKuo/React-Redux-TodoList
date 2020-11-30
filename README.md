@@ -4,7 +4,7 @@ Link: https://yskuo.github.io/React-Redux-TodoList/
 
 You can record the things that need to be done by adding items to this app.
 
-![](https://i.imgur.com/55Y9zQe.png)
+![](https://media.giphy.com/media/wHqS1CPOdF9Lm01oZn/giphy.gif)
 
 ## Feature and Screenshot
 

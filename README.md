@@ -1,56 +1,58 @@
-# Todo List
-
-Link: https://yskuo.github.io/React-Redux-TodoList/
-
-You can record the things that need to be done by adding items to this app.
-
-![](https://media.giphy.com/media/wHqS1CPOdF9Lm01oZn/giphy.gif)
-
 ## Feature and Screenshot
 
 ### Add, check and clear item
 
-To add an item, you just need to click the input field and type something. Then, press the `ENTER` key or click the `Submit` button, and your item will be displayed below the item controls.
+- Add item
+- Change item's status
+- Delete item
 
-- type somthing in the input field
+#### Add item
 
-![](https://i.imgur.com/oNyoTs3.png)
+To add an item, you just need to click the input field and type something. Then, press the `ENTER` key or click `Submit`, and your item will be displayed below the item controls.
 
-- add item
+#### Change item's status
 
-![](https://i.imgur.com/r494JUM.png)
+If you want to change an item's status, just click the `checkbox` on its left side.
 
-If you want to change an item's status, just click the `checkbox` on it's left side.
+![](https://media.giphy.com/media/wHqS1CPOdF9Lm01oZn/giphy.gif)
 
-![](https://i.imgur.com/4Hf4GB7.png)
+#### Delete item
 
-If you want to delete an item, just click the `Clear`.
+If you want to delete an item, just click `Clear`.
 
 ![](https://i.imgur.com/z2t05aX.png)
 
+---
+
 ### Item controls
+
+- Complete and uncomplete all
+- Clear
+- Filters (All/Active/Completed)
 
 #### Complete and uncomplete all
 
-Click the dropdown and the `Complete/Uncomplete all` button allows you to quickly change all items' status.
+Click the dropdown `ACTIONS` and `Complete/Uncomplete all` to quickly change the status of all items.
 
-![](https://i.imgur.com/wPEbYhL.png)
+![](https://media.giphy.com/media/rdJBTWog2cT699Y4oY/giphy.gif)
 
-![](https://i.imgur.com/MLoNKEa.png)
+---
 
-![](https://i.imgur.com/Qx6V3aR.png)
+#### Clear completed
 
-![](https://i.imgur.com/6day1JX.png)
+`Clear completed` helps you to clear all the completed items.
+
+![](https://media.giphy.com/media/UZKgLUCBZKjwQbbGTs/giphy.gif)
+
+---
 
 #### Filters
 
-Filters can help you to manage what kinds of items being shown on the screen.
+Filters (`All/Active/Completed`) can help you to manage the items shown on the screen.
 
-![](https://i.imgur.com/tO6UB6a.png)
+![](https://media.giphy.com/media/fX6SNBkYmviRINjFAu/giphy.gif)
 
-![](https://i.imgur.com/8EWu95A.png)
-
-![](https://i.imgur.com/rX52kru.png)
+---
 
 ### Local Storage
 
